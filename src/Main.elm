@@ -114,3 +114,13 @@ view model =
               triggeredAlarm Disarm (doorState /= Opened)
           ]
         ]
+
+-- MAIN
+
+main: Program () Model Msg
+main =
+  Browser.sandbox
+    { init = initialModel
+    , view = view
+    , update = update
+    }
